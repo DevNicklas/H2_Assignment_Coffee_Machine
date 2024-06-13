@@ -49,7 +49,7 @@
     <Compile Include="Interfaces\IFluidContainer.cs" />
     <Compile Include="Models\Bean.cs" />
     <Compile Include="Models\Capsule.cs" />
-    <Compile Include="Models\CoffeeDispensingUnits\CoffeeDispensingUnit.cs" />
+    <Compile Include="Models\CoffeeContainer.cs" />
     <Compile Include="Models\CoffeeMachineParts\Filter.cs" />
     <Compile Include="Models\CoffeeMachineParts\WaterContainer.cs" />
     <Compile Include="Models\CoffeeMachines\CapsuleCoffeeMachine.cs" />
