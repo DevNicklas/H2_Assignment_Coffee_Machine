@@ -11,17 +11,23 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
     public class EspressoCoffeeMachine : CoffeeMachine, IBeanGrinder, IFilterContainer
     {
         private List<Bean> _inventory;
+        private int _capacity;
         private Filter _filter;
 
-        public EspressoCoffeeMachine(string brandName, float width, float height, IFluidContainer waterContainer) : base(brandName, width, height, waterContainer)
+        public EspressoCoffeeMachine(string brandName, float width, float height, IFluidContainer waterContainer, int capacity) : base(brandName, width, height, waterContainer)
         {
-
+            _capacity = capacity;
         }
 
         public List<Bean> Inventory
         {
             get { return _inventory; }
             set { _inventory = value; }
+        }
+
+        public int Capacity
+        {
+            get { return _capacity; }
         }
 
         public Filter Filter
