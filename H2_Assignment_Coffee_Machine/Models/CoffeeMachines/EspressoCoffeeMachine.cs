@@ -38,12 +38,25 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
 
         public void InsertBeans(List<Bean> beans)
         {
+            int newBeansAmount = _inventory.Count + beans.Count;
 
+            if(newBeansAmount > _capacity)
+            {
+                throw new NotImplementedException("No more space for beans");
+            }
+
+            _inventory.AddRange(beans);
         }
 
         public void Grind()
         {
+            const int ONE_CUP_OF_BEANS = 70;
+            if(_inventory.Count < ONE_CUP_OF_BEANS)
+            {
+                throw new NotImplementedException("There aren't enough beans, you need at least 70 for one cup");
+            }
 
+            _inventory.RemoveRange(0, ONE_CUP_OF_BEANS);
         }
 
         public override bool Brew()
