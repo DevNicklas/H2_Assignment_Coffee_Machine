@@ -11,13 +11,14 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
     /// <summary>
     /// Represents an espresso coffee machine that grinds beans and brews coffee.
     /// </summary>
-    public class EspressoCoffeeMachine : CoffeeMachine, IBeanGrinder, IFilterContainer
+    public class EspressoCoffeeMachine : CoffeeMachine, IBeanGrinder
     {
         private List<Bean> _inventory;
         private int _capacity;
-        private Filter _filter;
-        private const int ONE_CUP_OF_BEANS = 80;
+        private const byte ONE_CUP_OF_BEANS = 80;
         private const float WATER_FOR_BEANS = 1.36f;
+
+        private IFilterContainer _filterContainer;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EspressoCoffeeMachine"/> class with the specified details.
@@ -27,10 +28,12 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         /// <param name="height">The height of the coffee machine.</param>
         /// <param name="waterContainer">The water container used by the coffee machine.</param>
         /// <param name="capacity">The maximum number of beans the machine can hold.</param>
-        public EspressoCoffeeMachine(string brandName, float width, float height, IFluidContainer waterContainer, int capacity): base(brandName, width, height, waterContainer)
+        /// <param name="filterContainer">The filter container used by the coffee machine</param>
+        public EspressoCoffeeMachine(string brandName, float width, float height, IFluidContainer waterContainer, IFilterContainer filterContainer, int capacity): base(brandName, width, height, waterContainer)
         {
             _capacity = capacity;
             _inventory = new List<Bean>();
+            _filterContainer = filterContainer;
         }
 
         /// <summary>
@@ -50,12 +53,11 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         }
 
         /// <summary>
-        /// Gets or sets the filter in the coffee machine.
+        /// Get the filter container of the coffee machine.
         /// </summary>
-        public Filter Filter
+        public IFilterContainer FilterContainer
         {
-            get { return _filter; }
-            set { _filter = value; }
+            get { return _filterContainer; }
         }
 
         /// <summary>
@@ -110,7 +112,7 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
                 return false;
             }
 
-            if(_filter == null)
+            if(_filterContainer.Filter == null)
             {
                 return false;
             }

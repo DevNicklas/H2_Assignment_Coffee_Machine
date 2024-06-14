@@ -10,12 +10,24 @@ namespace H2_Assignment_Coffee_Machine.Interfaces
     /// <summary>
     /// Interface representing a container that holds a filter.
     /// </summary>
-    internal interface IFilterContainer
+    public interface IFilterContainer
     {
         /// <summary>
-        /// Gets or sets the filter contained within the container.
+        /// Gets the filter contained within the container.
         /// </summary>
-        Filter Filter { get; set; }
+        Filter Filter { get; }
+
+        /// <summary>
+        /// Inserts filter into filter container
+        /// </summary>
+        /// <param name="filter">Filter to insert</param>
+        void InsertFilter(Filter filter);
+
+        /// <summary>
+        /// Disposes filter from filter container
+        /// </summary>
+        /// <param name="filter">Filter to dispose</param>
+        void DisposeFilter(Filter filter);
     }
 
 }

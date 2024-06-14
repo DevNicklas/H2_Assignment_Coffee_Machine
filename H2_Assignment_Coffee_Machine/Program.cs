@@ -21,7 +21,7 @@ namespace H2_Assignment_Coffee_Machine
             capsuleCoffeeMachine.InsertCapsule(iceCoffeeCapsule);
             Console.WriteLine(capsuleCoffeeMachine.Brew());
 
-            DripCoffeeMachine dripCoffeeMachine = new DripCoffeeMachine("EvenCoolerBrand", 20, 50, new WaterContainer(5), 300);
+            DripCoffeeMachine dripCoffeeMachine = new DripCoffeeMachine("EvenCoolerBrand", 20, 50, new WaterContainer(5), new FilterContainer(), 300);
             Bean meanieBean = new Bean("Meanie Bean", 0.2f);
             Filter paperFilterDrip = new Filter();
 
@@ -31,13 +31,14 @@ namespace H2_Assignment_Coffee_Machine
                 meanieBeans.Add(meanieBean);
             }
 
+            
             dripCoffeeMachine.TogglePower();
             dripCoffeeMachine.WaterContainer.AddFluid(3);
-            dripCoffeeMachine.Filter = paperFilterDrip;
+            dripCoffeeMachine.FilterContainer.InsertFilter(paperFilterDrip);
             dripCoffeeMachine.InsertBeans(meanieBeans);
             Console.WriteLine(dripCoffeeMachine.Brew());
 
-            EspressoCoffeeMachine espressoCoffeeMachine = new EspressoCoffeeMachine("EvenCoolerBrand", 20, 80, new WaterContainer(7), 400);
+            EspressoCoffeeMachine espressoCoffeeMachine = new EspressoCoffeeMachine("EvenCoolerBrand", 20, 80, new WaterContainer(7), new FilterContainer(), 400);
             Bean happyBean = new Bean("Happy Bean", 0.2f);
             Filter paperFilterEspresso = new Filter();
             
@@ -49,7 +50,7 @@ namespace H2_Assignment_Coffee_Machine
 
             espressoCoffeeMachine.TogglePower();
             espressoCoffeeMachine.WaterContainer.AddFluid(3f);
-            espressoCoffeeMachine.Filter = paperFilterEspresso;
+            espressoCoffeeMachine.FilterContainer.InsertFilter(paperFilterDrip);
             espressoCoffeeMachine.InsertBeans(happyBeans);
             Console.WriteLine(espressoCoffeeMachine.Brew());
 
