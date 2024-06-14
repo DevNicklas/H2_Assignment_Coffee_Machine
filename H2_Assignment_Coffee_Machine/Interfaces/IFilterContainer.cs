@@ -1,4 +1,4 @@
-﻿using H2_Assignment_Coffee_Machine.Models.CoffeeMachineParts;
+﻿using H2_Assignment_Coffee_Machine.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

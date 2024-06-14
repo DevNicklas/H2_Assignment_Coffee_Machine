@@ -18,7 +18,7 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
 
         private IFilterContainer _filterContainer;
 
-        private const int ONE_CUP_OF_BEANS = 70;
+        private const byte ONE_CUP_OF_BEANS = 70;
         private const float WATER_FOR_BEANS = 1.26f;
 
         /// <summary>
