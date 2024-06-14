@@ -15,10 +15,11 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
     {
         private List<Bean> _inventory;
         private int _capacity;
-        private const byte ONE_CUP_OF_BEANS = 80;
-        private const float WATER_FOR_BEANS = 1.36f;
 
         private IFilterContainer _filterContainer;
+
+        private const byte ONE_CUP_OF_BEANS = 80;
+        private const float WATER_FOR_BEANS = 1.36f;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EspressoCoffeeMachine"/> class with the specified details.

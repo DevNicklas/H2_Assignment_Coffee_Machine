@@ -26,8 +26,7 @@ namespace H2_Assignment_Coffee_Machine.Interfaces
         /// <summary>
         /// Disposes filter from filter container
         /// </summary>
-        /// <param name="filter">Filter to dispose</param>
-        void DisposeFilter(Filter filter);
+        Filter DisposeFilter();
     }
 
 }

@@ -37,16 +37,18 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachineParts
         /// <summary>
         /// Disposes filter from filter container
         /// </summary>
-        /// <param name="filter">Filter to dispose</param>
         /// <exception cref="NotImplementedException">Thrown when filter isn't used</exception>
-        public void DisposeFilter(Filter filter)
+        public Filter DisposeFilter()
         {
-            if (!filter.IsUsed)
+            if (_filter == null)
             {
-                throw new NotImplementedException("Filter is not used, and can't be disposed");
+                throw new NotImplementedException("There isn't a filter in the container");
             }
 
+            Filter disposedFilter = _filter;
             _filter = null;
+
+            return disposedFilter;
         }
     }
 }
