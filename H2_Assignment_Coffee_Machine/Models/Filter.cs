@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachineParts
+namespace H2_Assignment_Coffee_Machine.Models
 {
 
     /// <summary>
