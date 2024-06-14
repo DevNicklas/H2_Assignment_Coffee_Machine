@@ -23,7 +23,8 @@ namespace H2_Assignment_Coffee_Machine
 
             DripCoffeeMachine dripCoffeeMachine = new DripCoffeeMachine("EvenCoolerBrand", 20, 50, new WaterContainer(5), 300);
             Bean meanieBean = new Bean("Meanie Bean", 0.2f);
-            
+            Filter paperFilterDrip = new Filter();
+
             List<Bean> meanieBeans = new List<Bean>();
             for(int i = 0; i < 100; i++)
             {
@@ -32,11 +33,13 @@ namespace H2_Assignment_Coffee_Machine
 
             dripCoffeeMachine.TogglePower();
             dripCoffeeMachine.WaterContainer.AddFluid(3);
+            dripCoffeeMachine.Filter = paperFilterDrip;
             dripCoffeeMachine.InsertBeans(meanieBeans);
             Console.WriteLine(dripCoffeeMachine.Brew());
 
             EspressoCoffeeMachine espressoCoffeeMachine = new EspressoCoffeeMachine("EvenCoolerBrand", 20, 80, new WaterContainer(7), 400);
             Bean happyBean = new Bean("Happy Bean", 0.2f);
+            Filter paperFilterEspresso = new Filter();
             
             List<Bean> happyBeans = new List<Bean>();
             for(int i = 0; i < 110; i++)
@@ -46,6 +49,7 @@ namespace H2_Assignment_Coffee_Machine
 
             espressoCoffeeMachine.TogglePower();
             espressoCoffeeMachine.WaterContainer.AddFluid(3f);
+            espressoCoffeeMachine.Filter = paperFilterEspresso;
             espressoCoffeeMachine.InsertBeans(happyBeans);
             Console.WriteLine(espressoCoffeeMachine.Brew());
 
