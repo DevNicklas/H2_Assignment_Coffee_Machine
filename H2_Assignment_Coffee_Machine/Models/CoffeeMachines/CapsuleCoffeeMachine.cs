@@ -23,7 +23,7 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         /// <param name="width">The width of the coffee machine.</param>
         /// <param name="height">The height of the coffee machine.</param>
         /// <param name="waterContainer">The water container used by the coffee machine.</param>
-        public CapsuleCoffeeMachine(string brandName, float width, float height, WaterContainer waterContainer): base(brandName, width, height, waterContainer)
+        public CapsuleCoffeeMachine(string brandName, float width, float height, IFluidContainer waterContainer): base(brandName, width, height, waterContainer)
         {
 
         }

@@ -17,7 +17,7 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         private float _width;
         private float _height;
         private bool _isTurnedOn = false;
-        private WaterContainer _waterContainer;
+        private IFluidContainer _waterContainer;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CoffeeMachine"/> class with the specified details.
@@ -26,7 +26,7 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         /// <param name="width">The width of the coffee machine.</param>
         /// <param name="height">The height of the coffee machine.</param>
         /// <param name="waterContainer">The water container used by the coffee machine.</param>
-        protected CoffeeMachine(string brandName, float width, float height, WaterContainer waterContainer)
+        protected CoffeeMachine(string brandName, float width, float height, IFluidContainer waterContainer)
         {
             _brandName = brandName;
             _width = width;
@@ -69,9 +69,17 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         /// <summary>
         /// Gets the water container used by the coffee machine.
         /// </summary>
-        public WaterContainer WaterContainer
+        public IFluidContainer WaterContainer
         {
             get { return _waterContainer; }
+        }
+
+        /// <summary>
+        /// Toggles the power of the coffee machine
+        /// </summary>
+        public void TogglePower()
+        {
+            _isTurnedOn = !_isTurnedOn;
         }
 
         /// <summary>

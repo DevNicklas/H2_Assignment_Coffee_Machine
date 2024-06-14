@@ -16,6 +16,7 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         private List<Bean> _inventory;
         private int _capacity;
         private Filter _filter;
+
         private const int ONE_CUP_OF_BEANS = 70;
         private const float WATER_FOR_BEANS = 1.26f;
 
@@ -27,7 +28,7 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         /// <param name="height">The height of the coffee machine.</param>
         /// <param name="waterContainer">The water container used by the coffee machine.</param>
         /// <param name="capacity">The maximum number of beans the machine can hold.</param>
-        public DripCoffeeMachine(string brandName, float width, float height, WaterContainer waterContainer, int capacity): base(brandName, width, height, waterContainer)
+        public DripCoffeeMachine(string brandName, float width, float height, IFluidContainer waterContainer, int capacity): base(brandName, width, height, waterContainer)
         {
             _capacity = capacity;
             _inventory = new List<Bean>();
@@ -100,7 +101,7 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
                 return false;
             }
 
-            if (_inventory.Count <= ONE_CUP_OF_BEANS)
+            if (_inventory.Count < ONE_CUP_OF_BEANS)
             {
                 return false;
             }

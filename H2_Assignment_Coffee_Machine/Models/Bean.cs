@@ -13,17 +13,17 @@ namespace H2_Assignment_Coffee_Machine.Models
     {
         private string _name;
 
-        private float _weight;
+        private float _weightInGrams;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Bean"/> class with the specified details.
         /// </summary>
         /// <param name="name">The name of the bean.</param>
-        /// <param name="weight">The weight of the bean.</param>
-        public Bean(string name, float weight)
+        /// <param name="weightInGrams">The weight of the bean.</param>
+        public Bean(string name, float weightInGrams)
         {
             _name = name;
-            _weight = weight;
+            _weightInGrams = weightInGrams;
         }
 
         /// <summary>
@@ -37,9 +37,9 @@ namespace H2_Assignment_Coffee_Machine.Models
         /// <summary>
         /// Gets the weight of the bean.
         /// </summary>
-        public float Weight
+        public float WeightInGrams
         {
-            get { return _weight; }
+            get { return _weightInGrams; }
         }
     }
 }

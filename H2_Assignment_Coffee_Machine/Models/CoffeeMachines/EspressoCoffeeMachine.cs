@@ -16,8 +16,8 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         private List<Bean> _inventory;
         private int _capacity;
         private Filter _filter;
-        private const int ONE_CUP_OF_BEANS = 70;
-        private const float WATER_FOR_BEANS = 1.26f;
+        private const int ONE_CUP_OF_BEANS = 80;
+        private const float WATER_FOR_BEANS = 1.36f;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EspressoCoffeeMachine"/> class with the specified details.
@@ -27,7 +27,7 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         /// <param name="height">The height of the coffee machine.</param>
         /// <param name="waterContainer">The water container used by the coffee machine.</param>
         /// <param name="capacity">The maximum number of beans the machine can hold.</param>
-        public EspressoCoffeeMachine(string brandName, float width, float height, WaterContainer waterContainer, int capacity): base(brandName, width, height, waterContainer)
+        public EspressoCoffeeMachine(string brandName, float width, float height, IFluidContainer waterContainer, int capacity): base(brandName, width, height, waterContainer)
         {
             _capacity = capacity;
             _inventory = new List<Bean>();
