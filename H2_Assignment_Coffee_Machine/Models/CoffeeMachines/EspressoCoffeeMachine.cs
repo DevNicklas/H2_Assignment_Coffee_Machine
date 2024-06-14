@@ -110,6 +110,11 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
                 return false;
             }
 
+            if(_filter == null)
+            {
+                return false;
+            }
+
             Grind();
             this.WaterContainer.UseFluid(WATER_FOR_BEANS);
 
