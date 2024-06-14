@@ -54,6 +54,14 @@ namespace H2_Assignment_Coffee_Machine
             espressoCoffeeMachine.InsertBeans(happyBeans);
             Console.WriteLine(espressoCoffeeMachine.Brew());
 
+            TeaMachine teaMachine = new TeaMachine("TeaMachiny", 20, 30, new WaterContainer(4), new Infuser());
+            TeaBag teaBag = new TeaBag("Green Tea");
+
+            teaMachine.TogglePower();
+            teaMachine.WaterContainer.AddFluid(2f);
+            teaMachine.Infuser.InsertTeaBag(teaBag);
+            Console.WriteLine(teaMachine.Brew());
+
             Console.ReadLine();
         }
     }

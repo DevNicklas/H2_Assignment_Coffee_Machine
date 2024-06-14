@@ -11,7 +11,7 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
     /// <summary>
     /// Represents a drip coffee machine that grinds beans and brews coffee.
     /// </summary>
-    public class DripCoffeeMachine : CoffeeMachine, IBeanGrinder
+    public class DripCoffeeMachine : BrewerMachine, IBeanGrinder
     {
         private List<Bean> _inventory;
         private int _capacity;

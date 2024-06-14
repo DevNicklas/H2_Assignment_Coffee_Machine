@@ -47,16 +47,20 @@
     <Compile Include="Interfaces\ICapsuleDispenser.cs" />
     <Compile Include="Interfaces\IFilterContainer.cs" />
     <Compile Include="Interfaces\IFluidContainer.cs" />
+    <Compile Include="Interfaces\IInfuser.cs" />
     <Compile Include="Models\Bean.cs" />
     <Compile Include="Models\Capsule.cs" />
     <Compile Include="Models\CoffeeContainer.cs" />
     <Compile Include="Models\CoffeeMachineParts\FilterContainer.cs" />
+    <Compile Include="Models\CoffeeMachineParts\Infuser.cs" />
+    <Compile Include="Models\CoffeeMachines\TeaMachine.cs" />
     <Compile Include="Models\Filter.cs" />
     <Compile Include="Models\CoffeeMachineParts\WaterContainer.cs" />
     <Compile Include="Models\CoffeeMachines\CapsuleCoffeeMachine.cs" />
-    <Compile Include="Models\CoffeeMachines\CoffeeMachine.cs" />
+    <Compile Include="Models\CoffeeMachines\BrewerMachine.cs" />
     <Compile Include="Models\CoffeeMachines\DripCoffeeMachine.cs" />
     <Compile Include="Models\CoffeeMachines\EspressoCoffeeMachine.cs" />
+    <Compile Include="Models\TeaBag.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

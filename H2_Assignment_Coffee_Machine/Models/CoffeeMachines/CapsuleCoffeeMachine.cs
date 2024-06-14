@@ -11,7 +11,7 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
     /// <summary>
     /// Represents a coffee machine that uses capsules to brew coffee.
     /// </summary>
-    public class CapsuleCoffeeMachine : CoffeeMachine, ICapsuleDispenser
+    public class CapsuleCoffeeMachine : BrewerMachine, ICapsuleDispenser
     {
         private Capsule _capsule;
         private const float WATER_FOR_CAPSULE = 0.03f;

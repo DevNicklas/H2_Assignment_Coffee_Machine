@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
 {
     /// <summary>
-    /// Represents an coffee machine with basic properties and functionality.
+    /// Represents an brewer machine with basic properties and functionality.
     /// </summary>
-    public abstract class CoffeeMachine
+    public abstract class BrewerMachine
     {
         private string _brandName;
         private float _width;
@@ -20,13 +20,13 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         private IFluidContainer _waterContainer;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CoffeeMachine"/> class with the specified details.
+        /// Initializes a new instance of the <see cref="BrewerMachine"/> class with the specified details.
         /// </summary>
-        /// <param name="brandName">The brand name of the coffee machine.</param>
-        /// <param name="width">The width of the coffee machine.</param>
-        /// <param name="height">The height of the coffee machine.</param>
-        /// <param name="waterContainer">The water container used by the coffee machine.</param>
-        protected CoffeeMachine(string brandName, float width, float height, IFluidContainer waterContainer)
+        /// <param name="brandName">The brand name of the brewer machine.</param>
+        /// <param name="width">The width of the brewer machine.</param>
+        /// <param name="height">The height of the brewer machine.</param>
+        /// <param name="waterContainer">The water container used by the brewer machine.</param>
+        protected BrewerMachine(string brandName, float width, float height, IFluidContainer waterContainer)
         {
             _brandName = brandName;
             _width = width;
@@ -35,7 +35,7 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         }
 
         /// <summary>
-        /// Gets the brand name of the coffee machine.
+        /// Gets the brand name of the brewer machine.
         /// </summary>
         public string BrandName
         {
@@ -43,7 +43,7 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         }
 
         /// <summary>
-        /// Gets the width of the coffee machine.
+        /// Gets the width of the brewer machine.
         /// </summary>
         public float Width
         {
@@ -51,7 +51,7 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         }
 
         /// <summary>
-        /// Gets the height of the coffee machine.
+        /// Gets the height of the brewer machine.
         /// </summary>
         public float Height
         {
@@ -59,7 +59,7 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         }
 
         /// <summary>
-        /// Gets a boolean indicating whether the coffee machine is turned on.
+        /// Gets a boolean indicating whether the brewer machine is turned on.
         /// </summary>
         public bool IsTurnedOn
         {
@@ -67,7 +67,7 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         }
 
         /// <summary>
-        /// Gets the water container used by the coffee machine.
+        /// Gets the water container used by the brewer machine.
         /// </summary>
         public IFluidContainer WaterContainer
         {
@@ -75,7 +75,7 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         }
 
         /// <summary>
-        /// Toggles the power of the coffee machine
+        /// Toggles the power of the brewer machine
         /// </summary>
         public void TogglePower()
         {
@@ -83,16 +83,16 @@ namespace H2_Assignment_Coffee_Machine.Models.CoffeeMachines
         }
 
         /// <summary>
-        /// Dispenses coffee into the specified coffee container.
+        /// Dispenses fluid into the specified fluid container.
         /// </summary>
-        /// <param name="coffeeContainer">The coffee container into which the coffee is dispensed.</param>
-        public void DispenseCoffee(CoffeeContainer coffeeContainer)
+        /// <param name="fluidContainer">The fluid container into which the fluid is dispensed.</param>
+        public void DispenseFluid(IFluidContainer fluidContainer)
         {
-            coffeeContainer.AddFluid(0.236588f);
+            fluidContainer.AddFluid(0.236588f);
         }
 
         /// <summary>
-        /// Brews coffee.
+        /// Brews something, could be coffee.
         /// </summary>
         /// <returns>True if the brewing process was successful, otherwise false.</returns>
         public abstract bool Brew();
