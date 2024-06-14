@@ -33,5 +33,4 @@ namespace H2_Assignment_Coffee_Machine.Interfaces
         /// <param name="litres">The amount of fluid to use in liters.</param>
         void UseFluid(float litres);
     }
-
 }
